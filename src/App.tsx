@@ -1,39 +1,75 @@
-import './App.css';
-import { Routes, Route } from 'react-router-dom';
-import MainLayout from './MainLayout/MainLayout';
-import Home from './pages/Home';
-import Dashboard from './pages/Dashboard';
-import Contact from './pages/Contact';
-import UseDebounce from './pages/UseDebounce';
-import About from './pages/About';
-import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
-import UseMemo from './pages/UseMemo';
-import UseCallback from './pages/UseCallback';
-import ReactMemo from './pages/ReactMemo';
+import { Link, Routes, Route, Navigate } from 'react-router-dom'
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Dashboard from "./pages/Dashboard"
+import UseDebounce from './pages/UseDebounce'
+import UseMemo from './pages/UseMemo'
+import UseFetch from "./pages/UseFetch"
+import UseContext from './pages/UseContext'
+import Contact from './pages/Contact'
+import UseCallback from './pages/UseCallback'
+import ReactMemo from './pages/ReactMemo'
+import { useAuth } from './context/AuthContext'
+import UseReducer from './pages/UseReducer'
+import Recursive from "./pages/Recursive"
+import './App.scss'
 
 function App() {
+
+  const { login, logout, user } = useAuth()
+
+  const ProtectedRoutes = ({ children }: { children: JSX.Element }) => {
+    if (!user || user.role !== "Admin") {
+      return <Navigate to="/" replace />
+    } else {
+      return children
+    }
+  }
+
   return (
-    <div className="app-container">
-      <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            }
-          />
-          <Route path="/useDebounce" element={<UseDebounce />} />
-          <Route path="/useMemo" element={<UseMemo />} />
+    <div className='main-container'>
+      <div className='user-info'>
+        {user ? <div className='action-section'>Welcome {`${user.name}`}, {`${user.role}`} &nbsp; <button onClick={logout}>Logout</button></div> :
+          <div className='action-section'>
+            <button onClick={() => login(1)}>Login as Gnan (Admin)</button>&nbsp;&nbsp;
+            <button onClick={() => login(2)}>Login as Brahmisha (User)</button>&nbsp;&nbsp;
+            <button onClick={() => login(3)}>Login as Guest (Guest)</button>
+          </div>}
+      </div>
+      <div className='nav-links'>
+        <div className='links'>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/dashboard">Dashboard</Link>
+          <Link to="/useDebounce">UseDebounce</Link>
+          <Link to="/useFetch">UseFetch</Link>
+          <Link to="/useContext">UseContext</Link>
+          <Link to="/useCallback">UseCallback</Link>
+          <Link to="/useMemo">UseMemo</Link>
+          <Link to="/reactMemo">ReactMemo</Link>
+          <Link to="/recursive">Recursive</Link>
+          <Link to="/useReducer">UseReducer</Link>
+          <Link to="/contact">Contact</Link>
+        </div>
+      </div>
+      <div>
+        <Routes>
+          <Route path='/' index element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/dashboard' element={<ProtectedRoutes><Dashboard /></ProtectedRoutes>} />
+          <Route path='/useContext' element={<UseContext />} />
+          <Route path='/useDebounce' element={<UseDebounce />} />
+          <Route path='/useFetch' element={<UseFetch />} />
           <Route path="/useCallback" element={<UseCallback />} />
+          <Route path="/useMemo" element={<UseMemo />} />
           <Route path="/reactMemo" element={<ReactMemo />} />
-        </Route>
-      </Routes>
+          <Route path="/recursive" element={<Recursive />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path="/useReducer" element={<UseReducer />} />
+        </Routes>
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
