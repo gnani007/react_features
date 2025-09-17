@@ -12,6 +12,8 @@ import ReactMemo from './pages/ReactMemo'
 import { useAuth } from './context/AuthContext'
 import UseReducer from './pages/UseReducer'
 import Recursive from "./pages/Recursive"
+import TodoList from "./pages/TodoList"
+import PostSearch from './pages/PostSearch'
 import './App.scss'
 
 function App() {
@@ -49,6 +51,8 @@ function App() {
           <Link to="/reactMemo">ReactMemo</Link>
           <Link to="/recursive">Recursive</Link>
           <Link to="/useReducer">UseReducer</Link>
+          <Link to="/todoList">TodoList</Link>
+          <Link to="/postSearch">PostSearch</Link>
           <Link to="/contact">Contact</Link>
         </div>
       </div>
@@ -64,6 +68,8 @@ function App() {
           <Route path="/useMemo" element={<UseMemo />} />
           <Route path="/reactMemo" element={<ReactMemo />} />
           <Route path="/recursive" element={<Recursive />} />
+          <Route path="/todoList" element={<TodoList />} />
+          <Route path="/postSearch" element={<PostSearch />} />
           <Route path='/contact' element={<Contact />} />
           <Route path="/useReducer" element={<UseReducer />} />
         </Routes>
