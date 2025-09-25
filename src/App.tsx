@@ -14,6 +14,7 @@ import PostSearch from './pages/PostSearch'
 import './App.scss'
 import HandleObjectData from './pages/HandleObjectData'
 import ReactPortal from './pages/ReactPortal'
+import UserHOC from './HOC/UserHOC'
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
           <Link to="/useDebounce">UseDebounce</Link>
           <Link to="/handleObjData">Handle Object Data</Link>
           <Link to="/reactPortal">React Portal</Link>
+          <Link to="/userHOC">HOC</Link>
           <Link to="/useFetch">UseFetch</Link>
           <Link to="/useCallback">UseCallback</Link>
           <Link to="/useMemo">UseMemo</Link>
@@ -62,6 +64,7 @@ function App() {
           <Route path='/useDebounce' element={<UseDebounce />} />
           <Route path="/reactPortal" element={<ReactPortal />} />
           <Route path='/useFetch' element={<UseFetch />} />
+          <Route path="/userHOC" element={<UserHOC />} />
           <Route path="/useCallback" element={<UseCallback />} />
           <Route path="/useMemo" element={<UseMemo />} />
           <Route path="/reactMemo" element={<ReactMemo />} />
