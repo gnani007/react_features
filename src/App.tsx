@@ -12,6 +12,7 @@ import Recursive from "./pages/Recursive"
 import TodoList from "./pages/TodoList"
 import PostSearch from './pages/PostSearch'
 import './App.scss'
+import HandleObjectData from './pages/HandleObjectData'
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
           <Link to="/">Home</Link>
           <Link to="/dashboard">Dashboard</Link>
           <Link to="/useDebounce">UseDebounce</Link>
+          <Link to="/handleObjData">Handle Object Data</Link>
           <Link to="/useFetch">UseFetch</Link>
           <Link to="/useCallback">UseCallback</Link>
           <Link to="/useMemo">UseMemo</Link>
@@ -54,6 +56,7 @@ function App() {
         <Routes>
           <Route path='/' index element={<Home />} />
           <Route path='/dashboard' element={<ProtectedRoutes><Dashboard /></ProtectedRoutes>} />
+          <Route path="/handleObjData" element={<HandleObjectData />} />
           <Route path='/useDebounce' element={<UseDebounce />} />
           <Route path='/useFetch' element={<UseFetch />} />
           <Route path="/useCallback" element={<UseCallback />} />
