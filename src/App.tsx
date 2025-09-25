@@ -13,6 +13,7 @@ import TodoList from "./pages/TodoList"
 import PostSearch from './pages/PostSearch'
 import './App.scss'
 import HandleObjectData from './pages/HandleObjectData'
+import ReactPortal from './pages/ReactPortal'
 
 function App() {
 
@@ -42,6 +43,7 @@ function App() {
           <Link to="/dashboard">Dashboard</Link>
           <Link to="/useDebounce">UseDebounce</Link>
           <Link to="/handleObjData">Handle Object Data</Link>
+          <Link to="/reactPortal">React Portal</Link>
           <Link to="/useFetch">UseFetch</Link>
           <Link to="/useCallback">UseCallback</Link>
           <Link to="/useMemo">UseMemo</Link>
@@ -58,6 +60,7 @@ function App() {
           <Route path='/dashboard' element={<ProtectedRoutes><Dashboard /></ProtectedRoutes>} />
           <Route path="/handleObjData" element={<HandleObjectData />} />
           <Route path='/useDebounce' element={<UseDebounce />} />
+          <Route path="/reactPortal" element={<ReactPortal />} />
           <Route path='/useFetch' element={<UseFetch />} />
           <Route path="/useCallback" element={<UseCallback />} />
           <Route path="/useMemo" element={<UseMemo />} />
