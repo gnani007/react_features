@@ -1,12 +1,9 @@
 import { Link, Routes, Route, Navigate } from 'react-router-dom'
 import Home from "./pages/Home"
-import About from "./pages/About"
 import Dashboard from "./pages/Dashboard"
 import UseDebounce from './pages/UseDebounce'
 import UseMemo from './pages/UseMemo'
 import UseFetch from "./pages/UseFetch"
-import UseContext from './pages/UseContext'
-import Contact from './pages/Contact'
 import UseCallback from './pages/UseCallback'
 import ReactMemo from './pages/ReactMemo'
 import { useAuth } from './context/AuthContext'
