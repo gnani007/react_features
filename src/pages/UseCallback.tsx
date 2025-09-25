@@ -4,9 +4,9 @@ const UseCallback = () => {
   const [count, setCount] = useState(0);
   const [toggle, setToggle] = useState(false);
 
-  const logCount = useCallback(() => {
+  const logCount = () => {
     console.log('logging count', count);
-  }, [count]);
+  };
 
   useEffect(() => {
     console.log('useEffect triggered because logcount change');

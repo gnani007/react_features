@@ -41,11 +41,9 @@ function App() {
       <div className='nav-links'>
         <div className='links'>
           <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
           <Link to="/dashboard">Dashboard</Link>
           <Link to="/useDebounce">UseDebounce</Link>
           <Link to="/useFetch">UseFetch</Link>
-          <Link to="/useContext">UseContext</Link>
           <Link to="/useCallback">UseCallback</Link>
           <Link to="/useMemo">UseMemo</Link>
           <Link to="/reactMemo">ReactMemo</Link>
@@ -53,15 +51,12 @@ function App() {
           <Link to="/useReducer">UseReducer</Link>
           <Link to="/todoList">TodoList</Link>
           <Link to="/postSearch">PostSearch</Link>
-          <Link to="/contact">Contact</Link>
         </div>
       </div>
       <div>
         <Routes>
           <Route path='/' index element={<Home />} />
-          <Route path='/about' element={<About />} />
           <Route path='/dashboard' element={<ProtectedRoutes><Dashboard /></ProtectedRoutes>} />
-          <Route path='/useContext' element={<UseContext />} />
           <Route path='/useDebounce' element={<UseDebounce />} />
           <Route path='/useFetch' element={<UseFetch />} />
           <Route path="/useCallback" element={<UseCallback />} />
@@ -70,7 +65,6 @@ function App() {
           <Route path="/recursive" element={<Recursive />} />
           <Route path="/todoList" element={<TodoList />} />
           <Route path="/postSearch" element={<PostSearch />} />
-          <Route path='/contact' element={<Contact />} />
           <Route path="/useReducer" element={<UseReducer />} />
         </Routes>
       </div>
