@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 
-const ChildComponent = ({ name }) => {
+// Wrap ChildComponent with React.memo
+const ChildComponent = React.memo(({ name }) => {
   console.log('child component rendering ' + name);
   return <div>Name: {name}</div>;
-};
+});
 
 const ReactMemo = () => {
   const [counter, setCounter] = useState(0);
+
   return (
     <div>
       <h3>React.memo example</h3>

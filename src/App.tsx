@@ -15,6 +15,7 @@ import './App.scss'
 import HandleObjectData from './pages/HandleObjectData'
 import ReactPortal from './pages/ReactPortal'
 import UserHOC from './HOC/UserHOC'
+import InfiniteScroll from './pages/InfiniteScroll'
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
           <Link to="/useDebounce">UseDebounce</Link>
           <Link to="/handleObjData">Handle Object Data</Link>
           <Link to="/reactPortal">React Portal</Link>
+          <Link to="/infiniteScroll">Infinite Scroll</Link>
           <Link to="/userHOC">HOC</Link>
           <Link to="/useFetch">UseFetch</Link>
           <Link to="/useCallback">UseCallback</Link>
@@ -63,6 +65,7 @@ function App() {
           <Route path="/handleObjData" element={<HandleObjectData />} />
           <Route path='/useDebounce' element={<UseDebounce />} />
           <Route path="/reactPortal" element={<ReactPortal />} />
+          <Route path="/infiniteScroll" element={<InfiniteScroll />} /> 
           <Route path='/useFetch' element={<UseFetch />} />
           <Route path="/userHOC" element={<UserHOC />} />
           <Route path="/useCallback" element={<UseCallback />} />
