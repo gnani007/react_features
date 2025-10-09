@@ -16,6 +16,7 @@ import HandleObjectData from './pages/HandleObjectData'
 import ReactPortal from './pages/ReactPortal'
 import UserHOC from './HOC/UserHOC'
 import InfiniteScroll from './pages/InfiniteScroll'
+import ForwardRef from './pages/ForwardRef'
 
 function App() {
 
@@ -55,6 +56,7 @@ function App() {
           <Link to="/recursive">Recursive</Link>
           <Link to="/useReducer">UseReducer</Link>
           <Link to="/todoList">TodoList</Link>
+          <Link to="/forwardRef">ForwardRef</Link>
           <Link to="/postSearch">PostSearch</Link>
         </div>
       </div>
@@ -75,6 +77,7 @@ function App() {
           <Route path="/todoList" element={<TodoList />} />
           <Route path="/postSearch" element={<PostSearch />} />
           <Route path="/useReducer" element={<UseReducer />} />
+          <Route path="/forwardRef" element={<ForwardRef />} />
         </Routes>
       </div>
     </div>
